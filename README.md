@@ -23,6 +23,8 @@ Shiliu connects a creator's own AI agent to reference data, creative methods, an
 - [公开创作技能目录](https://shiliuai.cn/skills/)
 - [Agent 接入说明](https://shiliuai.cn/docs/agent/)
 - [公开接口核验记录](https://shiliuai.cn/stories/agent-discovery-check/)
+- [实际口播创作与修改记录](https://shiliuai.cn/stories/agent-script-workshop/)
+- [怎样选择适用的创作技能](https://shiliuai.cn/guides/choose-creative-skills/)
 
 ## 安装 Skill
 
@@ -72,4 +74,3 @@ Example: “Use Shiliu to research benchmark creators for my educational short-v
 The original integration skill and documentation in this repository are distributed under the [MIT License](LICENSE). This license does not grant rights to the hosted service, collected source content, or third-party skills. Those retain their respective terms and licenses.
 
 Report integration issues through [GitHub Issues](https://github.com/J1504/shiliu-skills/issues). Service entry: [shiliuai.cn](https://shiliuai.cn).
-
