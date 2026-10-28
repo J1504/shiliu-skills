@@ -1,8 +1,8 @@
-# 拾流 Shiliu · Agent 创作搭档
+# 拾流 Shiliu · Agent 自媒体专家
 
-**让你的 Agent 成为专业创作搭档。**
+**让你的 Agent 成为你的自媒体专家。**
 
-拾流为使用 Agent 的内容创作者整合参考资料、创作方法和云端工作空间。把创作目标交给自己的 Agent，让它找参考、研究选题、选用方法、完成稿件，并在开放的文档与表格中整理创作。
+拾流为使用 Agent 的内容创作者整合参考资料、创作技能和云端工作空间。把创作目标交给自己的 Agent，让它找参考、研究选题、选用方法、完成稿件，并在开放的文档与表格中整理创作。
 
 Shiliu connects a creator's own AI agent to reference data, creative methods, and a cloud workspace. Research benchmark accounts, develop content ideas, write short-video scripts, revise drafts, and organize ongoing work through one service.
 
@@ -13,6 +13,16 @@ Shiliu connects a creator's own AI agent to reference data, creative methods, an
 把下面这句话发给能够联网读取文档并调用 HTTPS 接口的 Agent。
 
 > 请阅读 https://shiliuai.cn/llms.txt，研究如何用拾流帮助我创作。先了解我的目标，再选择资料、技能与工具，建立创作空间并开始任务。需要我授权或确认费用时，请引导我完成。
+
+## 公开发现与使用指南
+
+- [从这里开始](https://shiliuai.cn/guides/get-started/)
+- [研究对标账号](https://shiliuai.cn/use-cases/competitor-research/)
+- [策划内容选题](https://shiliuai.cn/use-cases/content-planning/)
+- [创作短视频脚本](https://shiliuai.cn/use-cases/script-writing/)
+- [公开创作技能目录](https://shiliuai.cn/skills/)
+- [Agent 接入说明](https://shiliuai.cn/docs/agent/)
+- [公开接口核验记录](https://shiliuai.cn/stories/agent-discovery-check/)
 
 ## 安装 Skill
 
@@ -32,15 +42,15 @@ This is a standard Agent Skill, not an MCP server. Your agent needs HTTPS access
 
 - **找对标**　“我做面向职场新人的知识口播，帮我找值得研究的对标账号，整理近期选题和表达特点。”
 - **找资料与选题**　“围绕我这个账号的受众研究下周的内容，给出三个选题和参考来源。”
-- **完成创作**　“选择合适的创作方法，把选定的主题写成一分钟口播稿，保留我的表达风格。”
+- **完成创作**　“选择合适的创作技能，把选定的主题写成一分钟口播稿，保留我的表达风格。”
 - **修改与积累**　“根据我的反馈修改稿件，把资料、定稿和以后要遵守的偏好整理进我的空间。”
 
-## 数据、方法与空间
+## 数据、技能与空间
 
 | 能力 | Agent 可以做什么 |
 |---|---|
 | 创作数据 | 研究对标账号与作品，查询平台支持的外部数据接口，保留来源与日期 |
-| 创作方法 | 按任务查找创作 Skill，读取方法和配套文件，应用到选题、写作及修改 |
+| 创作技能 | 按任务查找创作 Skill，读取方法和配套文件，应用到选题、写作及修改 |
 | 创作空间 | 通过接口创建和更新文档、表格与目录，保存目标、资料、稿件和偏好 |
 
 平台、接口、价格和权限以服务实时返回为准。对标内容按服务同步周期更新；读取全文取决于实际收录和账户权益。
@@ -62,3 +72,4 @@ Example: “Use Shiliu to research benchmark creators for my educational short-v
 The original integration skill and documentation in this repository are distributed under the [MIT License](LICENSE). This license does not grant rights to the hosted service, collected source content, or third-party skills. Those retain their respective terms and licenses.
 
 Report integration issues through [GitHub Issues](https://github.com/J1504/shiliu-skills/issues). Service entry: [shiliuai.cn](https://shiliuai.cn).
+
