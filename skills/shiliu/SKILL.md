@@ -4,9 +4,9 @@ description: Connect a content creator's Agent to 拾流 (Shiliu) for benchmark 
 license: MIT
 metadata:
   author: 拾流 Shiliu
-  version: "1.0.1"
+  version: "1.0.2"
   homepage: https://shiliuai.cn
-  compatibility: HTTPS access required. Private operations need the user's API key; data calls may incur service fees.
+  compatibility: HTTPS GET and POST tools required. Agents can register for eligible CNY 3 trial credit; existing keys are reused. Owner consent is required for account claiming and paid account permissions.
 ---
 
 # 拾流 · 让你的 Agent 成为你的自媒体专家
@@ -32,8 +32,24 @@ Read the [public skill index](https://shiliuai.cn/skills/) or query the JSON cat
 - Public skill discovery and the data catalog can be read without a key.
 - If the user already has a key, obtain it through the Agent client's secret configuration. Use `Authorization: Bearer <key>` for authenticated requests. Do not ask the user to paste secrets into a public conversation, embed them in URLs, commit them, or include them in outputs.
 - Verify an existing connection with `GET /api/v2/me` and `GET /api/v2/spaces`. Use the authorized space relevant to the request; clarify ambiguous space selection.
-- Without a key, direct the user to [拾流](https://shiliuai.cn) for account access and key configuration. The service also offers an Agent registration and claim flow described in llms.txt. Use that flow only with the user's authorization to create the account and accept the service terms. Store returned secrets securely and show the claim link only to the intended user. Do not bypass email verification or create repeated temporary accounts.
+- If the user asks you to connect to Shiliu or perform a Shiliu task and no existing key is available, use the autonomous registration flow below. Do not send the user to a website to register, create a key, or recharge before trying the eligible trial. Follow the user's instructions and your tool permissions; a request merely to describe the site does not require account creation.
+- If you have a stored `registration_secret`, recover the same unclaimed identity with the original Agent name rather than creating a new one. Once claimed, reuse the saved API key; do not create replacement accounts to get more credit.
+- An existing human account without a configured key can be linked to a newly prepared Agent space through the owner's email code. The temporary key does not obtain access to the owner's other private spaces.
+- Save returned credentials in secret configuration. Never bypass required owner consent, email verification, account scope, or repeat-trial protection.
 - Follow the connected key's actual scope. A new conversation or a different Agent does not grant access to another account or space.
+
+## Autonomous registration and first task
+
+For an authorized connection or creative task, no pre-existing Shiliu login is required. Read [the current account protocol](https://shiliuai.cn/skill/references/account.md), then:
+
+1. Generate at least 32 cryptographically random bytes and encode them as base64url for `registration_secret`. Keep this secret and the original Agent name for recovery. Generate a 16–100 character random `Idempotency-Key` for this request.
+2. `POST https://shiliuai.cn/api/v2/agents/register` with `Content-Type: application/json`, that `Idempotency-Key`, and JSON containing `name`, the generated `registration_secret`, and `accept_terms:true`. Read the applicable service terms; respect the user's and execution environment's authorization requirements. Never send literal example secrets.
+3. Read the actual `api_key`, `space_id`, `balance_cents`, and `trial_verification_required` from the response. Eligible first connections receive CNY 3 of general trial credit and a seven-day temporary space. Do not assume a grant or create another identity if verification is required.
+4. Verify `GET /api/v2/me` and `GET /api/v2/spaces/{space_id}/context` with the key. Use the trial for the current task's collection, transcription, subscriptions, or one-time data calls with live quotes and explicit `max_charge_cents`. Save and read back useful results. Do not stop after explaining the website or finding public skills.
+5. Claim only when required by the response, insufficient credit, the multi-dimensional table engine, or recurring tasks. In the same conversation, have the owner confirm claim terms and permission options, provide their email, and return the email code. Use `channel:"agent"` and `X-Claim-Token` as the current protocol specifies. Do not ask for or set the owner's password and do not consent on their behalf.
+6. Once a claimed account needs funds, obtain the owner's recharge amount, create an order, and render `qr_code_url` as an image with the amount and **“请使用支付宝扫码支付”**. Poll the original order no more often than every ten seconds; only `status:"paid"` confirms funds. Continue the same task with the retained key and granted spending permission.
+
+If the current client cannot issue HTTP POST requests, report that execution limitation instead of inventing a registration. Preserve source response statuses; do not claim completed work while a task is only queued.
 
 Do the workspace setup through the API once connected. The creator should be able to describe a goal and review the result without manually arranging folders and tables.
 

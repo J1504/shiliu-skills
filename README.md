@@ -12,7 +12,13 @@ Shiliu connects a creator's own AI agent to reference data, creative methods, an
 
 把下面这句话发给能够联网读取文档并调用 HTTPS 接口的 Agent。
 
-> 请阅读 https://shiliuai.cn/llms.txt，研究如何用拾流帮助我创作。先了解我的目标，再选择资料、技能与工具，建立创作空间并开始任务。需要我授权或确认费用时，请引导我完成。
+> 请接入 https://shiliuai.cn，成为我的自媒体专家，并执行我提供的创作任务。先读 https://shiliuai.cn/llms.txt。有可用 API Key 或 registration_secret 时复用原身份和授权空间；没有凭证时，按文档自主调用 POST /api/v2/agents/register 开户，不要先让我手工注册、创建 Key 或充值。符合条件可获3元通用体验金，先在体验金和任务范围内查资料、采集、转写、调用接口并保存成果，按实时价格设置费用上限。余额不足、要求邮箱验证或需要表格引擎、持续任务时，再在当前对话用邮箱验证码认领；需要充值时明确金额，直接展示支付宝二维码。不要索取账户密码，不替我同意认领条款或开启付费授权。没有 HTTP 执行工具时明确说明限制，不把读到网页说成已完成接入。
+
+## 无需先手工开户
+
+有 Key 或 registration_secret 时复用已有身份。没有凭证时，能调用 HTTP API 的 Agent 按 [接入协议](https://shiliuai.cn/skill/references/account.md) 自主注册，符合条件先用3元通用体验金执行任务并保存成果；不必先打开网页注册、创建Key或充值。
+
+余额不足、要求邮箱验证、需要多维表格引擎或持续任务时，再在当前对话通过主人邮箱验证码认领。充值直接展示支付宝二维码。认领条款、账户余额付费权限和实际付款仍由主人确认。
 
 ## 公开发现与使用指南
 
@@ -36,7 +42,7 @@ npx skills add J1504/shiliu-skills --skill shiliu
 
 也可以下载 [Release 中的 ZIP 技能包](https://github.com/J1504/shiliu-skills/releases)，在支持 `SKILL.md` 的 Agent 产品中按其导入流程安装。安装方式和 HTTP 工具能力取决于具体客户端。此仓库提供标准 Agent Skill，尚未提供 MCP 服务。
 
-This is a standard Agent Skill, not an MCP server. Your agent needs HTTPS access; private workspace operations require your Shiliu API key. Configure credentials through your client's secret settings.
+This is a standard Agent Skill, not an MCP server. Your agent needs HTTPS access; agents without credentials can autonomously register for eligible CNY 3 trial credit. Reuse existing keys, and keep credentials in secret settings. Claiming and recharge can be completed in the owner conversation.
 
 ## 你可以这样开始
 
