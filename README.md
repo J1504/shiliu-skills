@@ -12,13 +12,13 @@ Shiliu connects a creator's own AI agent to reference data, creative methods, an
 
 把下面这句话发给能够联网读取文档并调用 HTTPS 接口的 Agent。
 
-> 请接入 https://shiliuai.cn，成为我的自媒体专家，并执行我提供的创作任务。先读 https://shiliuai.cn/llms.txt。有可用 API Key 或 registration_secret 时复用原身份和授权空间；没有凭证时，按文档自主调用 POST /api/v2/agents/register 开户，不要先让我手工注册、创建 Key 或充值。符合条件可获3元通用体验金，先在体验金和任务范围内查资料、采集、转写、调用接口并保存成果，按实时价格设置费用上限。余额不足、要求邮箱验证或需要表格引擎、持续任务时，再在当前对话用邮箱验证码认领；需要充值时明确金额，直接展示支付宝二维码。不要索取账户密码，不替我同意认领条款或开启付费授权。没有 HTTP 执行工具时明确说明限制，不把读到网页说成已完成接入。
+> 请接入 https://shiliuai.cn，成为我的自媒体专家，并执行我提供的创作任务。先读 https://shiliuai.cn/llms.txt。有可用 API Key 或 registration_secret 时复用原身份和授权空间；没有凭证时，按文档自主调用 POST /api/v2/agents/register 开户，不要先让我手工注册、创建 Key 或充值。新账户不赠送余额。先完成连接，读取公开技能并在免费限额内保存文档；收费操作先查报价和余额，明确费用上限。认领同时提供网页链接和对话内邮箱验证码方案；充值确认金额后同时提供网页支付链接和支付宝二维码，让我选择。不要索取账户密码，不替我同意认领条款或开启付费授权。没有 HTTP 执行工具时明确说明限制，不把读到网页说成已完成接入。
 
 ## 无需先手工开户
 
-有 Key 或 registration_secret 时复用已有身份。没有凭证时，能调用 HTTP API 的 Agent 按 [接入协议](https://shiliuai.cn/skill/references/account.md) 自主注册，符合条件先用3元通用体验金执行任务并保存成果；不必先打开网页注册、创建Key或充值。
+有 Key 或 registration_secret 时复用已有身份。没有凭证时，能调用 HTTP API 的 Agent 按 [接入协议](https://shiliuai.cn/skill/references/account.md) 自主注册，新账户不赠送余额。先验证连接，免费读取公开技能，在服务免费限额内保存文档；收费数据操作需要余额及费用授权。不必先手工创建Key。
 
-余额不足、要求邮箱验证、需要多维表格引擎或持续任务时，再在当前对话通过主人邮箱验证码认领。充值直接展示支付宝二维码。认领条款、账户余额付费权限和实际付款仍由主人确认。
+认领时同时提供 claim_url 网页链接和对话内邮箱验证码方案。充值时同时提供 checkout_url 网页链接和支付宝二维码，由主人选择。认领不赠送余额，原余额与成果按服务规则保留。认领条款、账户余额付费权限和实际付款仍由主人确认。
 
 ## 公开发现与使用指南
 
@@ -42,7 +42,7 @@ npx skills add J1504/shiliu-skills --skill shiliu
 
 也可以下载 [Release 中的 ZIP 技能包](https://github.com/J1504/shiliu-skills/releases)，在支持 `SKILL.md` 的 Agent 产品中按其导入流程安装。安装方式和 HTTP 工具能力取决于具体客户端。此仓库提供标准 Agent Skill，尚未提供 MCP 服务。
 
-This is a standard Agent Skill, not an MCP server. Your agent needs HTTPS access; agents without credentials can autonomously register for eligible CNY 3 trial credit. Reuse existing keys, and keep credentials in secret settings. Claiming and recharge can be completed in the owner conversation.
+This is a standard Agent Skill, not an MCP server. Your agent needs HTTPS access; agents without credentials can register with zero initial balance. Reuse existing keys and keep credentials in secret settings. Offer both web links and in-conversation assistance for claiming and recharge; paid operations require funding and authorization.
 
 ## 你可以这样开始
 
